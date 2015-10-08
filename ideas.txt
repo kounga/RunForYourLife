@@ -1,0 +1,12 @@
+Z order:
+ - Player
+ - Police
+ - Gound Obstacles
+ - Wall Obstacles
+ - Shops
+ - Background and road
+
+Shops:
+Sports: Lets you charge through obstacles for x seconds
+Yoga: Slows down the game
+Bank: Gives you money
