@@ -7,10 +7,13 @@ public class GameController : MonoBehaviour {
     float gameTime = 0f;
     public bool gameRunning = false;
     public float difficulty = 1f;
+    GameObject player;
+    PlayerController playerController;
 
 	// Use this for initialization
 	void Start () {
-	
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
 	}
 	
 	// Update is called once per frame
@@ -28,14 +31,21 @@ public class GameController : MonoBehaviour {
     {
         if (Input.GetButtonDown("Start_Game"))
         {
-            StartGame();
+            if (!gameRunning) StartGame();
+            else StopGame();
         }
     }
 
     void StartGame()
     {
         gameRunning = true;
+        playerController.run(true);
     }
 
+    void StopGame()
+    {
+        gameRunning = false;
+        playerController.run(false);
+    }
 
 }
