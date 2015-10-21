@@ -5,7 +5,15 @@ public class PlayerController : MonoBehaviour {
 
     public bool jumpingPressed = false;
     public bool jumping = false;
+    public float jumpHeight = 0.3f;
     float jumpTimer = 0f;
+    Animator playerAnimator = null;
+    GameObject player = null;
+
+    void Start()
+    {
+        playerAnimator = gameObject.GetComponent<Animator>();
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -15,10 +23,19 @@ public class PlayerController : MonoBehaviour {
         {
             jumpingPressed = false;
             jumping = true;
+            transform.Translate(new Vector3(0f, jumpHeight, 0f));
         }
         if (jumping)
         {
-            gameObject.GetComponent<"">
+            playerAnimator.SetBool("jumping", true);
+            jumpTimer -= Time.deltaTime;
+            if (jumpTimer <= 0f)
+            {
+                transform.Translate(new Vector3(0f, -jumpHeight, 0f));
+                jumping = false;
+                jumpTimer = 0f;
+                playerAnimator.SetBool("jumping", false);
+            }
         }
 	}
 
