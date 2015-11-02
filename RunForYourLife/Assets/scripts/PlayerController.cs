@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
     public bool actionPressed = false;
     public bool acting = false;
     public float jumpHeight = 0.3f;
+    public float crouchHeight = -0.1f;
     float actionTimer = 0f;
     string action = "none";
 
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour {
             {
                 actionPressed = false;
                 acting = true;
+                transform.Translate(new Vector3(0f, crouchHeight, 0f));
             }
 
             if (acting)
@@ -54,7 +56,10 @@ public class PlayerController : MonoBehaviour {
                     actionTimer -= Time.deltaTime;
                     if (actionTimer <= 0f)
                     {
-                        transform.Translate(new Vector3(0f, -jumpHeight, 0f));
+                        if (action == "jumping")
+                            transform.Translate(new Vector3(0f, -jumpHeight, 0f));
+                        if (action == "crouching")
+                            transform.Translate(new Vector3(0f, -crouchHeight, 0f));
                         acting = false;
                         actionTimer = 0f;
                         playerAnimator.SetBool(action, false);

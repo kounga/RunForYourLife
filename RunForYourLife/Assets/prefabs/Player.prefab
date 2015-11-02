@@ -12,9 +12,10 @@ GameObject:
   - 212: {fileID: 21265948}
   - 61: {fileID: 6185262}
   - 50: {fileID: 5010172}
+  - 114: {fileID: 11488976}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,11 +56,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 173708}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: .159999996, y: .419999987}
+  m_Size: {x: .159999996, y: .330000013}
 --- !u!95 &9595186
 Animator:
   serializedVersion: 3
@@ -77,6 +78,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11488976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43dfeb32554386b478b2071311ca1d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionPressed: 0
+  acting: 0
+  jumpHeight: .300000012
+  crouchHeight: -.100000001
 --- !u!212 &21265948
 SpriteRenderer:
   m_ObjectHideFlags: 1
