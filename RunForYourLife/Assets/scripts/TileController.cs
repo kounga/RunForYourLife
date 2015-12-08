@@ -3,13 +3,12 @@ using System.Collections;
 
 public class TileController : MonoBehaviour {
 
-    GameObject[] tiles;
+    public Queue tiles = new Queue();
     float tileOffset = 2f;
-    int numTiles = 0;
     public GameObject tile;
-    GameObject lastTile;
     GameObject gameControllerObject;
     GameController gameController;
+    GameObject currentLast;
 
     // Use this for initialization
     void Start () {
@@ -23,19 +22,26 @@ public class TileController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        for (int i = 0; i < numTiles; i++)
+
+        foreach (GameObject tile in tiles)
         {
-            if (tiles[i].transform.position.x <= -2f)
-                createTile(lastTile.transform.position + new Vector3(2f, 0f, 0f));
-            tiles[i].transform.Translate(new Vector3(-gameController.gameSpeed * gameController.difficulty, 0f, 0f));
+            tile.transform.Translate(new Vector3(-gameController.gameSpeed * Time.deltaTime, 0f, 0f));
         }
+        Debug.Log(-gameController.gameSpeed);
+
+        currentLast = (GameObject) tiles.Peek();
+        if (currentLast.transform.position.x < -4f)
+        {
+            Vector3 offset = new Vector3(currentLast.transform.position.x + 4f, 0f, 0f);
+            createTile(new Vector3(4f, 0f, 0f) + offset);
+            Destroy((GameObject) tiles.Dequeue());
+        }
+        
 	}
 
     void createTile(Vector3 vector)
     {
         GameObject newTile = Instantiate(tile, vector, Quaternion.identity) as GameObject;
-        tiles[numTiles] = newTile;
-        numTiles++;
-        lastTile = newTile;
+        tiles.Enqueue(newTile);
     }
 }

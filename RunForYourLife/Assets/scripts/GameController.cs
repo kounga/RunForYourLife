@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
-    public float gameSpeed = 1f;
+    public float gameSpeed = 0f;
     float gameTime = 0f;
     public bool gameRunning = false;
     public float difficulty = 1f;
@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour {
         {
             //Set game speed
             gameTime += Time.deltaTime;
-            gameSpeed = Mathf.Sqrt(gameTime * 0.1f);
+            gameSpeed = Mathf.Sqrt(gameTime * difficulty);
         }
 	}
 
@@ -46,6 +46,7 @@ public class GameController : MonoBehaviour {
     {
         gameRunning = false;
         playerController.run(false);
+        gameSpeed = 0f;
     }
 
 }
