@@ -6,7 +6,9 @@ public class GameController : MonoBehaviour {
     public float gameSpeed = 0f;
     float gameTime = 0f;
     public bool gameRunning = false;
-    public float difficulty = 1f;
+    public float difficulty = 0.4f; //Between 0 and 1
+    public float obstacleOccurence = 0.1f;
+
     GameObject player;
     PlayerController playerController;
 

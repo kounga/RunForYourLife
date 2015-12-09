@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour {
                 actionPressed = false;
                 acting = true;
                 transform.Translate(new Vector3(0f, jumpHeight, 0f));
+                Debug.Log("doin dis");
             }
             if (Input.GetButtonUp("Crouch") && (acting == false))
             {

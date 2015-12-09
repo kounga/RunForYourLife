@@ -40,6 +40,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 104532, guid: 7cc7419e1b96bd541a1ace4e25cc8f48, type: 2}
+  shopSprites:
+  - {fileID: 21300000, guid: 854c2a500f591d641b7c5367e8134c62, type: 3}
+  - {fileID: 21300000, guid: 8085cac873fc68d47b83e1fcb3dadb29, type: 3}
+  - {fileID: 21300000, guid: 7be6c67fe91499a4dbc24bad6736edf0, type: 3}
+  - {fileID: 21300000, guid: f3f658e014cf8464fa100cea3361fd82, type: 3}
+  - {fileID: 21300000, guid: 9f1a60f9a78543347ac585c46ac5dd45, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -51,6 +57,31 @@ Prefab:
       propertyPath: tile
       value: 
       objectReference: {fileID: 104532, guid: 7cc7419e1b96bd541a1ace4e25cc8f48, type: 2}
+    - target: {fileID: 0}
+      propertyPath: shopSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 854c2a500f591d641b7c5367e8134c62,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: shopSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8085cac873fc68d47b83e1fcb3dadb29,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: shopSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7be6c67fe91499a4dbc24bad6736edf0,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: shopSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: f3f658e014cf8464fa100cea3361fd82,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: shopSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9f1a60f9a78543347ac585c46ac5dd45,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 129506}
